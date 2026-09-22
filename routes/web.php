@@ -1,4 +1,5 @@
 <?php
+// ...existing code...
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Mahasiswa;
@@ -18,7 +19,6 @@ Route::get('/matakuliah/create', [MatakuliahController::class, 'create']);
 
 Route::get('/matakuliah', function () {
     $data = Matakuliah::with('dosen')->get();
-
     return view('matakuliah.index', compact('data'));
 });
 
